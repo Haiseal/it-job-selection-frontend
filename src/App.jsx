@@ -6,6 +6,7 @@ import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import Skills from "./pages/Skills";
 import ProtectedRoute from "./components/ProtectedRoute";
+import Recommend from "./pages/Recommend";
 
 export default function App() {
   return (
@@ -20,8 +21,8 @@ export default function App() {
         <Route element={<ProtectedRoute />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/skills" element={<Skills />} />
+          <Route path="/recommend" element={<Recommend />} />
         </Route>
-
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </>

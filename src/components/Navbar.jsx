@@ -16,6 +16,8 @@ export default function Navbar() {
           <NavLink to="/dashboard" className={linkClass}>Dashboard</NavLink>
           <NavLink to="/login" className={linkClass}>Login</NavLink>
           <NavLink to="/register" className={linkClass}>Register</NavLink>
+          <NavLink to="/skills" className={linkClass}>Skills</NavLink>
+          <NavLink to="/recommend" className={linkClass}>Recommend</NavLink>
         </div>
       </div>
     </div>
