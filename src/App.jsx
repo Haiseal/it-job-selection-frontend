@@ -5,8 +5,10 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import Skills from "./pages/Skills";
-import ProtectedRoute from "./components/ProtectedRoute";
 import Recommend from "./pages/Recommend";
+import History from "./pages/History";
+import RunResult from "./pages/RunResult";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 export default function App() {
   return (
@@ -22,7 +24,10 @@ export default function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/skills" element={<Skills />} />
           <Route path="/recommend" element={<Recommend />} />
+          <Route path="/history" element={<History />} />
+          <Route path="/runs/:runId" element={<RunResult />} />
         </Route>
+
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </>
