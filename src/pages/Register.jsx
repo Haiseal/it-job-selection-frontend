@@ -7,7 +7,7 @@ export default function Register() {
   const nav = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState("student"); // mặc định student
+  const [role, setRole] = useState("student"); 
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState("");
 
@@ -17,12 +17,12 @@ export default function Register() {
     setLoading(true);
     try {
       const res = await api.post("/auth/register", { email, password, role });
-      // nếu backend register trả luôn token thì save luôn
+      
       if (res.data?.token) {
         saveAuth(res.data);
         nav("/dashboard");
       } else {
-        // nếu backend không trả token, chuyển qua login
+       
         nav("/login");
       }
     } catch (error) {
@@ -72,7 +72,7 @@ export default function Register() {
       </form>
 
       <p className="mt-3 text-sm">
-        Đã có tài khoản? <Link className="underline" to="/login">Login</Link>
+        Already have an account? <Link className="underline" to="/login">Login</Link>
       </p>
     </div>
   );

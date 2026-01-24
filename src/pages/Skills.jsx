@@ -29,7 +29,7 @@ export default function Skills() {
         // my: [{skill_id, skill_name, level}, ...] (tuỳ backend bạn trả)
         const map = {};
         for (const row of my) {
-          // ưu tiên skill_id, fallback nếu backend trả id khác
+          
           const sid = row.skill_id ?? row.id ?? row.skillId;
           if (sid != null) map[sid] = row.level ?? 0;
         }
@@ -55,13 +55,13 @@ export default function Skills() {
       setSaving(true);
       setMsg("");
 
-      // chỉ save những skill đang có trong list
+      
       const payload = skills.map((s) => ({
         skill_id: s.id,
         level: myLevels[s.id] ?? 0,
       }));
 
-      // Backend của bạn thường upsert 1 item/lần => gọi Promise.all
+      
       await Promise.all(
         payload.map((item) => api.post("/me/skills", item))
       );
@@ -81,7 +81,7 @@ export default function Skills() {
       <div className="flex items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl font-bold">Skill Assessment</h1>
-          <p className="text-gray-600">Chọn level 0–3 cho từng kỹ năng.</p>
+          <p className="text-gray-600">Choose level 0–3 for each skill.</p>
         </div>
 
         <button

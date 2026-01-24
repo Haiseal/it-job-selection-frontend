@@ -56,7 +56,7 @@ export default function Login() {
       </form>
 
       <p className="mt-3 text-sm">
-        Chưa có tài khoản? <Link className="underline" to="/register">Register</Link>
+        Don't have an account? <Link className="underline" to="/register">Register</Link>
       </p>
     </div>
   );
